@@ -42,7 +42,7 @@ function Form() {
                     'comments': comments ,
                 });
 
-                let message = 'https://www.' + window.location.host + '/result/' + userID + '/' + numberOfUser[0] ;
+                let message = window.location.protocol + '//www.' + window.location.host + '/result/' + userID + '/' + numberOfUser[0] ;
 
                 ovh.request('POST', '/sms/' + serviceName + '/jobs/', {
                     message: message,
@@ -87,8 +87,6 @@ function Form() {
         }
     }
 
-    console.log(phone)
-    console.log(uuidv4())
     return (
         <>
             <section id='form'>
