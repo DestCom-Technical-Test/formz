@@ -31,5 +31,5 @@ Vous pouvez lancer ce projet en quelques étapes :
 
 ## Demo
 
-Une démonstration est disponible sur : 
+Une démonstration est disponible sur : http://www.formz-react.netlify.app
 Un quotas d'envoi de SMS a pu etre atteint, empéchant donc le bon fonctionnement de l'app
