@@ -4,6 +4,7 @@ Le principe etait de créer un formulaire qui lors de son envoi, envoi un lien v
 Ce projet a été développé sous React avec create-react-app, l'API OVH, normalize.css, react-router, firebase, uuid and react-loader-spinner.
 
 [Voir une demo.](#demo)
+
 [Le lancer soit même.](#le-lancer-via-localhost)
 
 ## Qu'utilise ce projet :
@@ -32,4 +33,5 @@ Vous pouvez lancer ce projet en quelques étapes :
 ## Demo
 
 Une démonstration est disponible sur : http://www.formz-react.netlify.app
+
 Un quotas d'envoi de SMS a pu etre atteint, empéchant donc le bon fonctionnement de l'app

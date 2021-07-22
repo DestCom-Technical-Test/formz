@@ -42,7 +42,7 @@ function Form() {
                     'comments': comments ,
                 });
 
-                let message = 'http://www.' + window.location.host + '/result/' + userID + '/' + numberOfUser[0] ;
+                let message = 'https://www.' + window.location.host + '/result/' + userID + '/' + numberOfUser[0] ;
 
                 ovh.request('POST', '/sms/' + serviceName + '/jobs/', {
                     message: message,
