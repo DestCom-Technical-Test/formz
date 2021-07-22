@@ -1,0 +1,132 @@
+::placeholder{
+    color: white;
+}
+
+input, textarea{
+    width: 40vw;
+    height: 8vh;
+    margin: 1%;
+    align-self: center;
+    border: none;
+    border-bottom: white solid 3px;
+    outline: none;
+    transition: border-bottom, color;
+    transition-duration: 0.5s;
+    transition-delay: 0.05s;
+    font-size: 1.1em;
+    background-color: transparent;
+}
+
+textarea{
+    resize: none;
+    color: white;
+    font-family: 'Nunito';
+}
+
+input:focus, textarea:focus{
+    color: #3689d3;
+    border-bottom: #3689d3 solid 3px;
+}
+
+input:focus::placeholder, textarea:focus::placeholder{
+    color: #3689d3;
+}
+
+input[type='text']:valid{
+    color: green;
+    border-bottom: green solid 3px !important;
+}
+
+input[type='checkbox']{
+    height: 3vh;
+}
+
+.consent, .buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+h1{
+    margin: 0.5%;
+}
+
+h3{
+    color: red;
+    font-size: 1em;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.buttons>p:nth-child(1){
+    width: 20vw;
+    height: 5vh;
+    border: #205788 solid 2px ;
+    color: #205788;
+    text-align: center;
+    align-self:flex-end;
+    border-radius: 50px;
+    padding-top: 1%;
+}
+
+.enabled{
+    border: transparent solid 2px ;
+    width: 20vw;
+    height: 5vh;
+    background-color: #205788;
+    color: white;
+    text-align: center;
+    align-self:flex-end;
+    border-radius: 50px;
+    padding-top: 1%;
+}
+
+.buttons>p{
+    transition: background-color, color, border;
+    transition-duration: 0.5s;
+    transition-delay: 0.05s;
+}
+
+.enabled:hover, .buttons>p:nth-child(1):hover{
+    cursor: pointer;
+}
+
+.buttons>p:nth-child(1):hover{
+    background-color: #3689d3;
+    border-color: #3689d3 ;
+    color: white;
+}
+
+.enabled{
+    background-color: #3689d3;
+    color: white;
+}
+
+.disabled{
+    border: transparent solid 2px ;
+    width: 20vw;
+    height: 5vh;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    align-self:flex-end;
+    border-radius: 50px;
+    padding-top: 1%;
+}
+
+.hidden{
+    display: none;
+}
+
+.false{
+    color: red;
+    /*background-color: red;*/
+    border-bottom: red solid 3px !important;
+}
+
+.good{
+    color: green;
+    /*background-color: green;*/
+    border-bottom: green solid 3px !important;
+}
