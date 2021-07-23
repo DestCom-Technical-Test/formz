@@ -34,7 +34,4 @@ Vous pouvez lancer ce projet en quelques étapes :
 
 Une démonstration est disponible sur : https://www.formz-react.netlify.app
 
-Un quotas d'envoi de SMS a pu etre atteint, empéchant donc le bon fonctionnement de l'app
-
-## Updates
-- gerer l'erreur d'envoi impossible
+Un quotas d'envoi de SMS a pu etre atteint, empéchant donc le bon fonctionnement de l'app.
