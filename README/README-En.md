@@ -25,7 +25,7 @@ You can start this project in a few steps :
 3. Then rename the file ```'.env.dist'``` into ```'.env'```,
 4. You will need an account OVH Cloud and Google Firebase,
 In your firebase account,
-Go create a web app (located by the </> logo), and take your firbaseConfig value in the 'SDK' field,
+Go create a project and then create a web app (located by the </> logo), and take your firbaseConfig value in the 'SDK' field,
 then go to the "Firestore Database" tab and create a database, then a collection named 'datas', then a document named '0' (a placeholder), in the rules page, change what is noted by this: ```  rules_version = '2';
                                                                                                                      service cloud.firestore {
                                                                                                                      match /databases/{database}/documents {
