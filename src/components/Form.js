@@ -1,3 +1,4 @@
+//Imports
 import {
     useState
 } from "react";
@@ -6,9 +7,11 @@ import {
 } from 'uuid';
 import firebase from "firebase/app";
 import 'firebase/firestore';
-import '../styles/Form.css';
+
 import Input from "./Input";
 import Infos from "./Infos";
+
+import '../styles/Form.css';
 
 var ovh = require('ovh')({
     appKey: process.env.REACT_APP_OVH_APP_KEY,
@@ -17,6 +20,7 @@ var ovh = require('ovh')({
 })
 
 function Form() {
+    //Attente des inputs utilisateurs
     const [nom, nomUpdate] = useState('')
     const [prenom, prenomUpdate] = useState('')
     const [rue, rueUpdate] = useState('')
@@ -31,16 +35,21 @@ function Form() {
     const [mail, mailUpdate] = useState('')
     const numberOfUser = []
 
+    //Fonction d'envoi des données
     function sendSMS() {
-        console.log(numberOfUser)
+        //Se connecte au service SMS
         ovh.request('GET', '/sms', function (err, serviceName) {
             if (err) {
-                console.log(err, serviceName);
+                //arret si erreur
+                return;
             } else {
-                console.log('Success, account :', serviceName, 'is online');
+                //Si connexion réussie
+                //Crée un identifant unique
                 let userID = uuidv4();
+                //Ajoute le numero de telephone a la liste d'envoi
                 numberOfUser.push(phone)
 
+                //Enregistre les données
                 firebase.firestore().collection('datas').doc(userID).set({
                     'lastName': nom,
                     'firstName': prenom,
@@ -50,17 +59,20 @@ function Form() {
                     'comments': comments,
                 });
 
+                //Crée le message qui va etre envoyer
                 let message = window.location.protocol + '//www.' + window.location.host + '/result/' + userID + '/' + numberOfUser[0];
 
+                //Envoi le message
                 ovh.request('POST', '/sms/' + serviceName + '/jobs/', {
                     message: message,
                     senderForResponse: true,
                     receivers: numberOfUser
                 }, function (errsend, result) {
                     if (errsend) {
-                        console.log('error:', errsend)
+                        //Si erreur le signal a l'utilisateur
                         window.location = '/error/' + errsend;
                     } else {
+                        //Si succes le redirige vers une page de confirmation
                         window.location = '/success';
                     }
                 })
@@ -68,31 +80,34 @@ function Form() {
         })
     }
 
+    //Fonction de verification de bon format du numero.
     function verifNumber(value) {
         /* eslint "no-control-regex": 0 */
-        let phoneRegex = /^((\+)33)[1-9](\d{2}){4}$/
+        let phoneRegex = /^((\+)33)[1-9](\d{2}){4}$/ //Regex numero de telephone francais avec l'indicatif
         if (phoneRegex.test(value)) {
             let valueChange = '';
             valueChange = value.replace('+', '00');
+            //reformatage du numero pour l'api OVH
             phoneUpdate(valueChange);
             document.querySelector('.tel').classList.remove('false');
             document.querySelector('.tel').classList.add('good');
         } else {
+            //Si numéro non conforme remise a zéro de la valeur
             phoneUpdate('');
             document.querySelector('.tel').classList.remove('good');
             document.querySelector('.tel').classList.add('false');
         }
     }
 
+    //Fonction d'activation de l'utilisation du bouton d'envoi
     function canSubmit() {
-        console.log(nom, prenom, rue, cp, ville, pays, phone)
         document.getElementById("checkbox").checked = false;
         if (nom !== (null || '') && prenom !== (null || '') && rue !== (null || '') && cp !== (null || '') && ville !== (null || '') && pays !== (null || '') && phone !== (null || '')) {
             submitButtonUpdate(true);
             document.querySelector('.warning').classList.add('hidden');
             document.getElementById("checkbox").checked = true;
-        }
-        else {
+            return;
+        } else {
             submitButtonUpdate(false);
             document.querySelector('.warning').classList.remove('hidden');
             document.getElementById("checkbox").checked = false;

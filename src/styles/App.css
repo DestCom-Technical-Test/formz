@@ -9,7 +9,10 @@ body {
     background: linear-gradient(#141e30, #243b55);
 }
 
-#form, #results, #error, #success{
+#form,
+#results,
+#error,
+#success {
     display: flex;
     flex-direction: column;
     height: 95vh;
@@ -23,8 +26,12 @@ body {
 }
 
 @media only screen and (max-width: 1025px) {
-    #form, #results, #error, #success{
+
+    #form,
+    #results,
+    #error,
+    #success {
         width: 90vw;
-        
+
     }
 }

@@ -1,3 +1,4 @@
+//Imports
 import {
   BrowserRouter as Router,
   Redirect,
@@ -5,24 +6,26 @@ import {
   Switch
 } from "react-router-dom";
 
-import { firebaseConfig } from "../firebase-credentials";
+import {
+  firebaseConfig
+} from "../firebase-credentials";
 import firebase from "firebase/app";
 import 'firebase/firestore';
 
 import Success from './Success';
 import Error from './Error';
 import Form from './Form';
-
-import '../styles/App.css';
 import Results from "./Results";
 
+import '../styles/App.css';
+
 function App() {
+  //Initalise Firebase
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
- }else {
+  } else {
     firebase.app();
- }
-
+  }
 
   return (
     <Router>

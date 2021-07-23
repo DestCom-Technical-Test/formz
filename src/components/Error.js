@@ -1,16 +1,16 @@
 import {
-    useParams, 
+    useParams,
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 
-  import '../styles/Error.css';
+import '../styles/Error.css';
 
-function Error(){
+function Error() {
+    //Recupere l'erreur envoyée
     const {
-         status
-      } = useParams();
+        status
+    } = useParams();
 
-    
     return (
         <section id='error'>
             <h1>Erreur : {status}</h1>
