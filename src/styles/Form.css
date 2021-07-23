@@ -1,11 +1,15 @@
+h1{
+    text-align: left;
+}
+
 ::placeholder{
     color: white;
 }
 
 input, textarea{
     width: 40vw;
-    height: 8vh;
-    margin: 1%;
+    height: 5vh;
+    margin: 0.2%;
     align-self: center;
     border: none;
     border-bottom: white solid 3px;
@@ -13,14 +17,25 @@ input, textarea{
     transition: border-bottom, color;
     transition-duration: 0.5s;
     transition-delay: 0.05s;
-    font-size: 1.1em;
+    font-size: 1em;
     background-color: transparent;
+    color: white;
+}
+
+#form > div:nth-child(6){
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    align-self: center;
+    text-align: center;
 }
 
 textarea{
     resize: none;
     color: white;
     font-family: 'Nunito';
+    height: 6vh !important;
 }
 
 input:focus, textarea:focus{
@@ -32,9 +47,15 @@ input:focus::placeholder, textarea:focus::placeholder{
     color: #3689d3;
 }
 
-input[type='text']:valid{
+input[type='text']:valid, input[type='date']:valid, input[type='mail']:valid{
     color: green;
     border-bottom: green solid 3px !important;
+}
+
+
+input[type='text']:focus:required:invalid,  input[type='date']:focus:required:invalid, input[type='mail']:focus:required:invalid{
+    color: red;
+    border-bottom: red solid 3px !important;
 }
 
 input[type='checkbox']{
@@ -44,6 +65,17 @@ input[type='checkbox']{
 .consent, .buttons{
     display: flex;
     justify-content: space-evenly;
+}
+
+.consent>input{
+    width: 10vw;
+}
+
+.consent>label{
+    max-height: 8vh;
+    font-size: 1em;
+    width: 75vw;
+    overflow: auto;
 }
 
 
@@ -129,4 +161,25 @@ h3{
     color: green;
     /*background-color: green;*/
     border-bottom: green solid 3px !important;
+}
+
+@media only screen and (max-width: 1025px) {
+    input, textarea{
+        width: 70vw;
+    }
+
+    h1{
+        margin: 2%;
+    }
+    
+    #form > div:nth-child(6){
+        width: 70vw;
+        
+    }
+
+    .consent{
+        height: 10vh;
+        font-size: 0.9em;
+    }
+
 }

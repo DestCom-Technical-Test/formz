@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 .env
 test.js
+FEEDBACK.txt
+.env.perso.copy

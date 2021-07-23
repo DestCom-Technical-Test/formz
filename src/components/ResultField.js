@@ -8,6 +8,8 @@ function ResultField({reponse, phone}){
             <p>Voici les informations que vous avez fournies :</p>
             <p>- Votre nom : {reponse.lastName}</p>
             <p>- Votre prénom : {reponse.firstName}</p>
+            <p>- Votre adresse mail : {reponse.mail}</p>
+            <p>- Votre date de naissance : {reponse.birthDate}</p>
             <p>- Votre adresse : {reponse.adress}</p>
             <p>- Votre numéro de téléphone : {phone}</p>
             <p>- Vos commentaires : {reponse.comments}</p>

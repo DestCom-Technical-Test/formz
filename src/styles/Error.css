@@ -1,3 +1,7 @@
+h1, p, a, h2{
+    margin: 2%;
+}
+
 a{
     width: 20vw;
     height: 5vh;
@@ -19,4 +23,11 @@ a:hover{
     background-color: #3689d3;
     border-color: #3689d3 ;
     color: white;
+}
+
+@media only screen and (max-width: 1025px) {
+    a{
+        width: 50vw;
+    }
+
 }
