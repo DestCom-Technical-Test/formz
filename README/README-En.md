@@ -3,7 +3,6 @@ The concept was to create a form that when sent, sends a link via text message t
 
 This project was developed with React including create-react-app, the OVH API, normalize.css, react-router, firebase, uuid and react-loader-spinner.
 
-French translation available / Traduction française disponible : [HERE](./README/README-Fr.md)
 
 [DEMO.](#demo)
 
