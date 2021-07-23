@@ -21,8 +21,18 @@ Vous pouvez lancer ce projet en quelques étapes :
 1. Clonez ce répertoire,
 2. lancez la commande ```npm install ```,
 3. Ensuite renommez le fichier ```'.env.dist'``` en ```'.env'```,
-4. Vous aurez besoin d'un compte OVH Cloud et Google Firebase,
-5. Une fois en possession de vos comptes, créez les projets adéquats et remplacez les variables dans le fichier ```'.env'``` par les votres.
+4. Vous aurez besoin d'un compte OVH Cloud et Google Firebase, Une fois votre compte Firebase crée, lancer un nouveau projet, puis créez une application web (indiqué par le logo </>), et recuperez votre firebaseConfig dans le champ SDK,
+ensuite rendez vous sur l'onglet "Firestore Database" et créez une base de donées, puis créez une collection nommée 'datas' et un document nomée '0' (faisant office de placeholder).
+Rendez vous ensuite dans la pages régles et changez la regle existante par ```  rules_version = '2';
+                                                                                                                     service cloud.firestore {
+                                                                                                                     match /databases/{database}/documents {
+                                                                                                                        match /{document=**} {
+                                                                                                                            allow read, write: if true;
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                     } ```
+                                                                                                                     puis sauvegardez la.
+5. Une fois en possession de vos comptes et les projets adéquats et remplacez les variables dans le fichier ```'.env'``` par les votres.
 6. Vous pouvez désormais le lancer :
     - en mode développement : avec la commande ```npm start ```
     - ou creer un build : avec la commande ```npm run build ```

@@ -35,7 +35,7 @@ then go to the "Firestore Database" tab and create a database, then a collection
                                                                                                                         }
                                                                                                                      } ``` 
 then save the rule.
-5. Once you have your accountsand yours projects, replace the variables in the ```'.env'``` with your own.
+5. Once you have your accounts and yours projects, replace the variables in the ```'.env'``` with your own.
 6. You can now launch it :
     - in development mode: with the command ```npm start ```
     - or create a build : with the command ```npm run build ```
@@ -45,6 +45,6 @@ then save the rule.
 
 ## Demo
 
-A demo is available on : https://www.formz-react.netlify.app
+A demo will be available soon.
 
 A quota of sending text messages could be reached, blocking the proper working of this DEMO.
