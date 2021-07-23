@@ -6,7 +6,7 @@ h2 {
 }
 
 #error>a,
-#success>a:hover {
+#success>a {
     width: 20vw;
     height: 5vh;
     border: #205788 solid 2px;
