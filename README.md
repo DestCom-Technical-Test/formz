@@ -24,7 +24,18 @@ You can start this project in a few steps :
 2. run the command ```npm install ```,
 3. Then rename the file ```'.env.dist'``` into ```'.env'```,
 4. You will need an account OVH Cloud and Google Firebase,
-5. Once you have your accounts, create the proper projects and replace the variables in the ```'.env'``` with your own.
+In your firebase account,
+Go create a web app (located by the </> logo), and take your firbaseConfig value in the 'SDK' field,
+then go to the "Firestore Database" tab and create a database, then a collection named 'datas', then a document named '0' (a placeholder), in the rules page, change what is noted by this: ```  rules_version = '2';
+                                                                                                                     service cloud.firestore {
+                                                                                                                     match /databases/{database}/documents {
+                                                                                                                        match /{document=**} {
+                                                                                                                            allow read, write: if true;
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                     } ``` 
+then save the rule.
+5. Once you have your accountsand yours projects, replace the variables in the ```'.env'``` with your own.
 6. You can now launch it :
     - in development mode: with the command ```npm start ```
     - or create a build : with the command ```npm run build ```
