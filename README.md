@@ -45,6 +45,6 @@ then save the rule.
 
 ## Demo
 
-A demo will be available soon.
+A demo is available on : https://formz-react.herokuapp.com/ .
 
 A quota of sending text messages could be reached, blocking the proper working of this DEMO.

@@ -60,7 +60,7 @@ function Form() {
                 });
 
                 //Crée le message qui va etre envoyer
-                let message = window.location.protocol + window.location.host + '/result/' + userID + '/' + numberOfUser[0];
+                let message = window.location.protocol + '//' + window.location.host + '/result/' + userID + '/' + numberOfUser[0];
 
                 //Envoi le message
                 ovh.request('POST', '/sms/' + serviceName + '/jobs/', {
