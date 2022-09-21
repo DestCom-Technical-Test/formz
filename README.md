@@ -1,11 +1,14 @@
 # Formz
+
+> :warning: **Due to heroku's decision to discontinue its free plan, this demo is no longer online and will not be put back online.
+
 The concept was to create a form that when sent, sends a link via text message to the user, which displays the information previously entered.
 
 This project was developed with React including create-react-app, the OVH API, normalize.css, react-router, firebase, uuid and react-loader-spinner.
 
 French translation available / Traduction française disponible : [HERE](./README/README-Fr.md)
 
-[DEMO.](#demo)
+~~[DEMO.](#demo)~~
 
 [Launch it yourself.](#run-it-via-localhost)
 
@@ -45,6 +48,6 @@ then save the rule.
 
 ## Demo
 
-A demo is available on : https://formz-react.herokuapp.com/ .
+~~A demo is available on : https://formz-react.herokuapp.com/.~~
 
 A quota of sending text messages could be reached, blocking the proper working of this DEMO.
